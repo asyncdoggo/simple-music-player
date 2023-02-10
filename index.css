@@ -1,0 +1,106 @@
+.main {
+    width: 100%;
+}
+
+.title {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.listcontainer {
+    height: 500px;
+    overflow-y: scroll;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+ul > li {
+    margin-right: 10px;
+    margin-bottom: 1px;
+    background-color: whitesmoke;
+    padding: 10px;
+    border: solid 0.5px black;
+    border-radius: 15px;
+}
+
+
+.title > p {
+    font-size: xx-large;
+}
+
+label {
+    align-self: center;
+}
+
+.buttons {
+    margin-top: 50px;
+    margin-bottom: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.buttons > span {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.buttons > span:hover {
+    margin-left: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+#songname {
+    align-self: center;
+}
+
+#music_progress {
+    align-self: center;
+    margin-bottom: 50px;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.aud_block {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.aud_block > p {
+    font-size: large;
+}
+
+.list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.list > p {
+    align-self: center;
+}
+
+@media only screen and (max-width: 640px) {
+    .container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
