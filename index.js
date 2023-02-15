@@ -26,7 +26,7 @@ function Play() {
     }
     else{
         audio.pause();
-        document.getElementById("play").innerHTML = "play_arrow";
+        document.getElementById("play").innerHTML = "play_circle";
     }
 }
 

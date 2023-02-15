@@ -57,11 +57,10 @@ label {
 .buttons > span {
     margin-left: 10px;
     margin-right: 10px;
+    user-select: none;
 }
 
 .buttons > span:hover {
-    margin-left: 10px;
-    margin-right: 10px;
     cursor: pointer;
 }
 
