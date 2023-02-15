@@ -19,7 +19,7 @@ audio.addEventListener("timeupdate",function () {
 
 // Function to change the playing status of audio tag
 function Play() {
-    document.getElementById(index).style = "background-color:aqua;"
+    document.getElementById(index).style = "background-color:rgba(233, 32, 112, 0.693);"
     if(audio.paused){
         audio.play();
         document.getElementById("play").innerHTML = "pause";
@@ -43,7 +43,7 @@ document.getElementById("input").addEventListener("change", function () {
         li.id = i;
         ol.appendChild(li);
     }
-    document.getElementById(index).style = "background-color:aqua;"
+    document.getElementById(index).style = "background-color: rgba(233, 32, 112, 0.693);"
 });
 
 
