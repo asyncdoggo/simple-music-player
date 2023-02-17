@@ -1,5 +1,6 @@
 let audio = document.getElementById("audio");
 let audioList;
+let blobList;
 let index = 0;
 let progress = document.getElementById("music_progress");
 
@@ -33,7 +34,9 @@ function Play() {
 // Function to update audioList on loading audio files
 document.getElementById("input").addEventListener("change", function () {
     audioList =  document.getElementById("input").files;
-    audio.setAttribute("src",audioList[index].name);
+    
+    audio.src = URL.createObjectURL(audioList[index])
+
     document.getElementById("songname").innerHTML = audioList[index].name
     let ol = document.getElementById("audlist");
     ol.innerHTML = "";
@@ -52,7 +55,7 @@ function next() {
     document.getElementById(index).style = "background-color:transparent;"
     index++;
     index %= audioList.length;
-    audio.setAttribute("src",audioList[index].name);
+    audio.src = URL.createObjectURL(audioList[index])
     document.getElementById("songname").innerHTML = audioList[index].name
     Play(); // call the play function to autoplay the song after switching
 }
@@ -64,7 +67,8 @@ function previous() {
     index--;
     index = (index % audioList.length + audioList.length) % audioList.length; // js modulo opereator is busted so fix it using this logic
 
-    audio.setAttribute("src",audioList[index].name);
+    audio.src = URL.createObjectURL(audioList[index])
+
     document.getElementById("songname").innerHTML = audioList[index].name
     Play(); // call the play function to autoplay the song after switching
 }
