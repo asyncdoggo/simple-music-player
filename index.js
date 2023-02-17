@@ -18,6 +18,11 @@ audio.addEventListener("timeupdate",function () {
 })
 
 
+progress.addEventListener("input",function (event) {
+    audio.currentTime = (event.target.value/100) * audio.duration
+})
+
+
 // Function to change the playing status of audio tag
 function Play() {
     document.getElementById(index).style = "background-color:rgba(233, 32, 112, 0.693);"
