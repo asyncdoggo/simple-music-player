@@ -3,11 +3,23 @@ let audioList;
 let blobList;
 let index = 0;
 let progress = document.getElementById("music_progress");
+let time = document.getElementById("time")
+
+
+
+
+
+function fmtMSS(s){return(s-(s%=60))/60+(9<s?':':':0')+s}
+
+
+
+
 
 // Update progress bar using timeupdate event of audio tag
 audio.addEventListener("timeupdate",function () {
     try{
         progress.value = (audio.currentTime/audio.duration) * 100;
+        time.innerHTML = `${fmtMSS(Math.ceil(audio.currentTime))}/${fmtMSS(Math.ceil(audio.duration))}`
         if(progress.value == 100){
             next()
         }
@@ -17,7 +29,7 @@ audio.addEventListener("timeupdate",function () {
     }
 })
 
-
+// Add event Listener to progress bar
 progress.addEventListener("input",function (event) {
     audio.currentTime = (event.target.value/100) * audio.duration
 })
