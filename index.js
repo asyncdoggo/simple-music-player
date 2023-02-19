@@ -20,6 +20,7 @@ audio.addEventListener("timeupdate",function () {
 
 // Function to change the playing status of audio tag
 function Play() {
+    document.title = audioList[index].name
     document.getElementById(index).style = "background-color:rgba(233, 32, 112, 0.693);"
     if(audio.paused){
         audio.play();
