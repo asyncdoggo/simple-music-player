@@ -9,7 +9,7 @@ let time = document.getElementById("time")
 
 
 
-function fmtMSS(s){return(s-(s%=60))/60+(9<s?':':':0')+s}
+function secondsToMinutes(s){return(s-(s%=60))/60+(9<s?':':':0')+s}
 
 
 
@@ -19,7 +19,7 @@ function fmtMSS(s){return(s-(s%=60))/60+(9<s?':':':0')+s}
 audio.addEventListener("timeupdate",function () {
     try{
         progress.value = (audio.currentTime/audio.duration) * 100;
-        time.innerHTML = `${fmtMSS(Math.ceil(audio.currentTime))}/${fmtMSS(Math.ceil(audio.duration))}`
+        time.innerHTML = `${secondsToMinutes(Math.ceil(audio.currentTime))}/${secondsToMinutes(Math.ceil(audio.duration))}`
         if(progress.value == 100){
             next()
         }
@@ -37,6 +37,7 @@ progress.addEventListener("input",function (event) {
 
 // Function to change the playing status of audio tag
 function Play() {
+    document.title = audioList[index].name
     document.getElementById(index).style = "background-color:rgba(233, 32, 112, 0.693);"
     if(audio.paused){
         audio.play();
@@ -61,6 +62,8 @@ document.getElementById("input").addEventListener("change", function () {
         var li = document.createElement("li");
         li.appendChild(document.createTextNode(audioList[i].name));
         li.id = i;
+        li.setAttribute("onclick",`playSelected(${i})`);
+        li.addEventListener
         ol.appendChild(li);
     }
     document.getElementById(index).style = "background-color: rgba(233, 32, 112, 0.693);"
@@ -82,13 +85,24 @@ function next() {
 function previous() {
     document.getElementById(index).style = "background-color:transparent;"
     index--;
-    index = (index % audioList.length + audioList.length) % audioList.length; // js modulo opereator is busted so fix it using this logic
+    index = (index % audioList.length + audioList.length) % audioList.length; // js modulo operator is busted so fix it using this logic
 
     audio.src = URL.createObjectURL(audioList[index])
 
     document.getElementById("songname").innerHTML = audioList[index].name
     Play(); // call the play function to autoplay the song after switching
 }
+
+
+
+function playSelected(item) {
+    document.getElementById(index).style = "background-color:transparent;"
+    index = item;
+    audio.src = URL.createObjectURL(audioList[index]);
+    document.getElementById("songname").innerHTML = audioList[index].name
+    Play()
+}
+
 
 
 // Add event listeners
