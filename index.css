@@ -63,11 +63,13 @@ label {
 
 #songname {
     align-self: center;
+    text-align: center;
 }
 
 #music_progress {
     align-self: center;
     margin-bottom: 50px;
+    width: 400px;
 }
 
 .container {
