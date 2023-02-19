@@ -67,11 +67,13 @@ label {
 
 #songname {
     align-self: center;
+    text-align: center;
 }
 
 #music_progress {
     align-self: center;
     margin-bottom: 50px;
+    width: 400px;
 }
 
 #time{
@@ -98,10 +100,6 @@ label {
 
 .aud_block > label {
     font-size: medium;
-}
-
-#music_progress{
-    width: 400px;
 }
 
 #play{
