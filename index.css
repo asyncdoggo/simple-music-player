@@ -72,7 +72,6 @@ label {
 
 #music_progress {
     align-self: center;
-    margin-bottom: 50px;
     width: 400px;
 }
 
@@ -133,4 +132,12 @@ label {
     .list{
         width: 100%;
     }
+}
+
+
+canvas{
+    height: 100px;
+    width: 430px;
+    /* border: solid 1px black; */
+    align-self: center;
 }
